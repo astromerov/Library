@@ -55,3 +55,22 @@ function handleClick(e) {
 
 // listen for a click event on each and every anchor link
 links.forEach(link => link.addEventListener('click', handleClick));
+
+// This is for rough notation
+import { annotate } from 'rough-notation';
+// Or using unpkg
+// import { annotate } from 'https://unpkg.com/rough-notation?module';
+
+const e = document.querySelector('#myElement');
+const annotation = annotate(e, { type: 'underline' });
+annotation.show();
+
+// This is rough notation group
+import { annotate, annotationGroup } from 'rough-notation';
+
+const a1 = annotate(document.querySelector('#e1'), { type: 'underline' });
+const a2 = annotate(document.querySelector('#e3'), { type: 'box' });
+const a3 = annotate(document.querySelector('#e3'), { type: 'circle' });
+
+const ag = annotationGroup([a3, a1, a2]);
+ag.show();
